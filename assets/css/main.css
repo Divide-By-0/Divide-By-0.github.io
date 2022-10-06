@@ -1887,7 +1887,7 @@
 
 		.icons a:hover {
 			color: #fff;
-			border-bottom-color: transparent; 
+			border-bottom-color: transparent;
 		}
 		.icons a { border-bottom-color: transparent; }
 
@@ -2430,6 +2430,22 @@
 
 			.features li:nth-child(10) {
 				background-color: rgba(0, 0, 0, 0.35);
+			}
+
+			.features li:nth-child(11) {
+				background-color: rgba(0, 0, 0, 0.385);
+			}
+
+			.features li:nth-child(12) {
+				background-color: rgba(0, 0, 0, 0.42);
+			}
+
+			.features li:nth-child(13) {
+				background-color: rgba(0, 0, 0, 0.455);
+			}
+
+			.features li:nth-child(14) {
+				background-color: rgba(0, 0, 0, 0.49);
 			}
 
 			.features li:before {
