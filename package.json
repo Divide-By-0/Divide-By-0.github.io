@@ -1,0 +1,23 @@
+{
+  "name": "divide-by-0.github.io",
+  "version": "1.0.0",
+  "description": "Aayush Gupta's Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "cd blog && hugo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Divide-By-0/Divide-By-0.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Divide-By-0/Divide-By-0.github.io/issues"
+  },
+  "homepage": "https://github.com/Divide-By-0/Divide-By-0.github.io#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
