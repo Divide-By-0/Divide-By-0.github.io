@@ -7,6 +7,12 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* Custom */
+
+a {
+  text-decoration-color: #333; /* Change this to the desired darker color */
+}
+
 /* Reset */
 
 html,
@@ -2632,6 +2638,14 @@ button:disabled,
 
 .features li:nth-child(16) {
   background-color: rgba(0, 0, 0, 0.56);
+}
+
+.features li:nth-child(17) {
+  background-color: rgba(0, 0, 0, 0.595);
+}
+
+.features li:nth-child(18) {
+  background-color: rgba(0, 0, 0, 0.63);
 }
 
 .features li:before {
