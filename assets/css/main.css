@@ -2577,75 +2577,83 @@ button:disabled,
 }
 
 .features li:nth-child(1) {
-  background-color: rgba(0, 0, 0, 0.035);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .features li:nth-child(2) {
-  background-color: rgba(0, 0, 0, 0.07);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .features li:nth-child(3) {
-  background-color: rgba(0, 0, 0, 0.105);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .features li:nth-child(4) {
-  background-color: rgba(0, 0, 0, 0.14);
+  background-color: rgba(0, 0, 0, 0.11);
 }
 
 .features li:nth-child(5) {
-  background-color: rgba(0, 0, 0, 0.175);
+  background-color: rgba(0, 0, 0, 0.14);
 }
 
 .features li:nth-child(6) {
-  background-color: rgba(0, 0, 0, 0.21);
+  background-color: rgba(0, 0, 0, 0.17);
 }
 
 .features li:nth-child(7) {
-  background-color: rgba(0, 0, 0, 0.245);
+  background-color: rgba(0, 0, 0, 0.20);
 }
 
 .features li:nth-child(8) {
-  background-color: rgba(0, 0, 0, 0.28);
+  background-color: rgba(0, 0, 0, 0.23);
 }
 
 .features li:nth-child(9) {
-  background-color: rgba(0, 0, 0, 0.315);
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 .features li:nth-child(10) {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.29);
 }
 
 .features li:nth-child(11) {
-  background-color: rgba(0, 0, 0, 0.385);
+  background-color: rgba(0, 0, 0, 0.32);
 }
 
 .features li:nth-child(12) {
-  background-color: rgba(0, 0, 0, 0.42);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .features li:nth-child(13) {
-  background-color: rgba(0, 0, 0, 0.455);
+  background-color: rgba(0, 0, 0, 0.38);
 }
 
 .features li:nth-child(14) {
-  background-color: rgba(0, 0, 0, 0.49);
+  background-color: rgba(0, 0, 0, 0.41);
 }
 
 .features li:nth-child(15) {
-  background-color: rgba(0, 0, 0, 0.525);
+  background-color: rgba(0, 0, 0, 0.44);
 }
 
 .features li:nth-child(16) {
-  background-color: rgba(0, 0, 0, 0.56);
+  background-color: rgba(0, 0, 0, 0.47);
 }
 
 .features li:nth-child(17) {
-  background-color: rgba(0, 0, 0, 0.595);
+  background-color: rgba(0, 0, 0, 0.50);
 }
 
 .features li:nth-child(18) {
-  background-color: rgba(0, 0, 0, 0.63);
+  background-color: rgba(0, 0, 0, 0.53);
+}
+
+.features li:nth-child(19) {
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.features li:nth-child(20) {
+  background-color: rgba(0, 0, 0, 0.59);
 }
 
 .features li:before {
