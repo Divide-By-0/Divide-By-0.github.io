@@ -2577,15 +2577,15 @@ button:disabled,
 }
 
 .features li:nth-child(1) {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .features li:nth-child(2) {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .features li:nth-child(3) {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .features li:nth-child(4) {
@@ -2654,6 +2654,14 @@ button:disabled,
 
 .features li:nth-child(20) {
   background-color: rgba(0, 0, 0, 0.59);
+}
+
+.features li:nth-child(21) {
+  background-color: rgba(0, 0, 0, 0.62);
+}
+
+.features li:nth-child(22) {
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .features li:before {
