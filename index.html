@@ -30,16 +30,212 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <meta name="theme-color" content="#0f1115" />
+
+    <!-- Base styles from template (kept) -->
     <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!-- Ensure icon fonts are available -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+    <!-- Plain-text vibe overrides -->
+    <style>
+      :root {
+        --text: #e6e6e6;
+        --muted: #9aa0a6;
+        --link: #8ab4f8;
+        --border: #2a2f3a;
+        --bg: #0f1115;
+        --bg-subtle: #12161c;
+      }
+      html { color-scheme: dark; }
+      html, body {
+        background: var(--bg) !important;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 1.5;
+      }
+      /* Strip template background + hide header/menu */
+      body:before, #header:before, #banner:before { display: none !important; background: none !important; }
+      #header { display: none !important; }
+      body.is-menu-visible #menu { display: none !important; }
+      #page-wrapper { background: none !important; }
+      .wrapper, .wrapper.style1, .wrapper.style2, .wrapper.alt, header.alt, #footer {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      #header h1 a { color: var(--text); text-decoration: none; }
+      #nav #menu { background: var(--bg-subtle); border: 1px solid var(--border); }
+
+      /* Layout: simple two-column w/ sidebar */
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(280px, 360px);
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+      @media (max-width: 980px) {
+        .layout { grid-template-columns: 1fr; }
+        aside.sidebar { order: 2; }
+      }
+      .main { min-width: 0; }
+      aside.sidebar { min-width: 0; width: 100%; }
+
+      main.main > section {
+        margin: 0 0 2rem 0;
+        padding: 0 0 1rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      main.main > section:last-of-type { border-bottom: 0; }
+
+      /* Headings */
+      h2, h3 { margin: 0 0 0.5rem 0; }
+      h2 { font-size: 1.4rem; }
+      h3 { font-size: 1.1rem; }
+
+      /* Simple link rows with icons */
+      .link-row {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin: 0.25rem 0 0 0;
+        align-items: center;
+      }
+      .link-row a {
+        color: var(--link);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--link);
+      }
+      .link-row a:hover { border-bottom-style: solid; }
+      .link-row .icon { margin-right: 0.35rem; color: var(--muted); vertical-align: text-bottom; }
+      /* Ensure inline links elsewhere remain visible */
+      p a, .muted a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+
+      /* Compressed project list */
+      .project-list {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0 0 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .project-list li {
+        padding: 0.5rem 0;
+        border-top: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 1.2rem 1fr;
+        gap: 0.6rem;
+        align-items: start;
+      }
+      .project-list li:first-child { border-top: 0; }
+      .project-title { font-weight: 600; }
+      .project-desc { color: var(--muted); }
+      .project-desc a { color: var(--link); }
+      .project-list .icon { color: var(--muted); width: 1.2rem; text-align: center; line-height: 1; margin-top: 0.2rem; }
+
+      /* Sidebar modules */
+      aside.sidebar .box {
+        background: var(--bg-subtle);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.75rem 0.9rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+      aside.sidebar .box h3 { margin-bottom: 0.5rem; }
+      .micro-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.95rem;
+      }
+      .micro-list li {
+        padding: 0.35rem 0;
+        border-top: 1px dashed var(--border);
+      }
+      .micro-list li:first-child { border-top: 0; }
+      .muted { color: var(--muted); font-size: 0.95rem; }
+
+      /* Thoughts: allow scrolling to view all items */
+      #thoughts-list {
+        max-height: 320px;
+        overflow-y: auto;
+      }
+      #thoughts-hint {
+        text-align: center;
+        margin-top: 0.35rem;
+        opacity: 0.7;
+      }
+
+      /* Video carousel */
+      .carousel {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.4rem;
+        position: relative;
+        background: var(--bg-subtle);
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .carousel iframe {
+        width: 100%;
+        max-width: 560px;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        background: #000;
+        border-radius: 4px;
+        display: block;
+        margin: 0 auto;
+      }
+      .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.35rem;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow: hidden;
+      }
+      .carousel button {
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 0.25rem 0.45rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+      .carousel .title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1 1 auto;
+        min-width: 0;
+        text-align: center;
+      }
+      .carousel .count { color: var(--muted); font-size: 0.8rem; flex: 0 0 auto; white-space: nowrap; }
+      .carousel .more { margin-left: 0; }
+
+      /* Contain Twitter width and its iframe responsively */
+      aside.sidebar .box .twitter-timeline { max-width: 100% !important; width: 100% !important; display: block; }
+      aside.sidebar .box iframe { max-width: 100% !important; width: 100% !important; }
+
+      /* Footer minimal */
+      #footer ul.icons { gap: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; font-size: 0.95rem; }
+      #footer .icons a { color: var(--muted); text-decoration: none; }
+      #footer .icons a:hover { color: var(--link); }
+      #footer { border-top: 1px solid var(--border); padding-top: 1rem; text-align: center; }
+    </style>
   </head>
   <body class="landing">
-    <!-- Page Wrapper -->
     <div id="page-wrapper">
-      <!-- Header -->
-      <header id="header" class="alt">
+      <!-- Header (hidden by CSS) -->
+      <header id="header" class="alt" style="border-bottom: 1px solid var(--border);">
         <h1><a href="index.html">Aayush Gupta</a></h1>
         <nav id="nav">
           <ul>
@@ -48,9 +244,9 @@
               <div id="menu">
                 <ul>
                   <li><a href="https://blog.aayushg.com">Blog</a></li>
-                  <li><a href="index.html#aboutme">About Me</a></li>
-                  <!-- <li><a href="index.html#experience">Experience</a></li> -->
-                  <li><a href="index.html#projects">Projects</a></li>
+                  <li><a href="#aboutme">About</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#experience">Talks</a></li>
                 </ul>
               </div>
             </li>
@@ -58,313 +254,272 @@
         </nav>
       </header>
 
-      <!-- One -->
-      <section id="aboutme" class="wrapper style1 special">
-        <div class="inner">
-          <header class="major">
+      <div class="layout">
+        <main class="main">
+          <section id="aboutme">
             <h2>Aayush Gupta</h2>
             <p>
-              Hey! I'm an easily-nerdsniped lifelong learner who enjoys hard translational research, leading open source organizations, and being marginally useful. I also like <a href="https://blog.aayushg.com">blogging</a> about <a href="https://blog.aayushg.com/conviction">conviction</a>, <a href="https://blog.aayushg.com/zkemail">cryptography</a>, and <a href="https://blog.aayushg.com/tags/recs">movie/travel recs</a>. I also deeply care about open education for <a href="https://mitsoul.org">MIT</a> and <a href="https://coursetexts.org">Harvard</a>, and give my money away as <a href="https://hackgrants.com">grants for cool open source work</a>.
-              <br />
-              <br />
-              I work on open source <a href="https://blog.aayushg.com/tags/crypto">zero knowledge cryptography</a> right now, because I think pseudonymity is a critical unlock for human coordination. I also work on perceptual hashing because I think adversarially robust image provenance research is critical to our future, and <a href="https://coursetexts.org">open education projects</a> to increase the amount of advanced knowledge the human species has the ability to master. In the past, I worked across fields like multi-tissue aging research, equivariant
-              molecular neural networks, applied machine learning, and healthcare.
+              Hey! I'm an easily-nerdsniped lifelong learner who enjoys hard translational research, leading open source organizations, and being marginally useful.
+              I also like blogging about <a href="https://blog.aayushg.com/conviction">conviction</a>, <a href="https://blog.aayushg.com/zkemail">cryptography</a>, and
+              <a href="https://blog.aayushg.com/tags/recs">movie/travel recs</a>. I also deeply care about open education for <a href="https://mitsoul.org">MIT</a> and
+              <a href="https://coursetexts.org">Harvard</a>, and give my money away as <a href="https://hackgrants.com">grants for cool open source work</a>.
+              I work on open source <a href="https://blog.aayushg.com/tags/crypto">zero knowledge cryptography</a> right now, <a href="https://proteus.photos">perceptual hashing</a> (adversarially robust image provenance and copy detection),
+              and <a href="https://coursetexts.org">open education projects</a>. In the past: multi-tissue aging research, equivariant molecular neural networks, applied ML, and healthcare.
             </p>
-          </header>
-          <ul class="icons major">
-            <li>
-              <a href="https://www.github.com/Divide-By-0" target="_blank">
-                <span class="icon fa-github major style4">
-                  <span class="label">Github</span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://blog.aayushg.com" target="_blank">
-                <span class="icon fa-file-text major style4">
-                  <span class="label">Blog</span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:aayushg@mit.edu" target="_blank">
-                <span class="icon fa-envelope major style4">
-                  <span class="label">Email</span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com/yush_g" target="_blank">
-                <span class="icon fa-twitter major style4">
-                  <span class="label">Twitter</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+            <div class="link-row">
+              <a href="https://www.github.com/Divide-By-0" target="_blank"><span class="icon fa-github"></span>GitHub</a>
+              <a href="mailto:aayushg@mit.edu" target="_blank"><span class="icon fa-envelope"></span>Email</a>
+              <a href="https://www.twitter.com/yush_g" target="_blank"><span class="icon fa-twitter"></span>Twitter</a>
+              <a href="https://blog.aayushg.com" target="_blank"><span class="icon fa-file-text"></span>Blog</a>
+            </div>
+          </section>
 
-      <!-- Three -->
-      <section id="projects" class="wrapper style2 special">
-        <div class="inner">
-          <header class="major">
+          <section id="best-posts">
+            <h2>Best Posts</h2>
+            <ul class="project-list">
+              <li>
+                <span class="icon fa-book"></span>
+                <div>
+                  <span class="project-title"><a href="http://aayushg.com/blog" target="_blank">Blog</a></span>
+                  <div class="project-desc">Writing about cryptography, media, and general thoughts.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-lightbulb"></span>
+                <div>
+                  <span class="project-title"><a href="https://blog.aayushg.com/thoughts" target="_blank">Thoughts for Curious Rabbit-holers</a></span>
+                  <div class="project-desc">A live post of short updates across topics.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-file-text"></span>
+                <div>
+                  <span class="project-title"><a href="https://blog.aayushg.com/conviction" target="_blank">Conviction</a></span>
+                  <div class="project-desc">On building and testing conviction in ideas.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-envelope"></span>
+                <div>
+                  <span class="project-title"><a href="https://blog.aayushg.com/zkemail" target="_blank">ZK Email</a></span>
+                  <div class="project-desc">Anonymous proofs for identity and provenance via email data.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-film"></span>
+                <div>
+                  <span class="project-title"><a href="https://blog.aayushg.com/movies" target="_blank">Movie</a>/<a href="https://blog.aayushg.com/travel" target="_blank">Travel</a> Recommendations</span>
+                  <div class="project-desc">Novelty-focused recommendations.</div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section id="projects">
             <h2>Projects</h2>
-            <p>Here are the best ones. Check them out!</p>
-          </header>
-          <ul class="features">
-            <li class="icon fa-envelope" id="zkemail">
-              <h3><a href="https://prove.email">ZK Email: Anonymous Proofs about Email Data</a></h3>
-              <p>
-                Co-invented (and still co-steward) ZK Email (<a href="https://prove.email">prove.email</a>), which lets you prove identity via emails you have received, whistleblow securely, or <a href="https://emailwallet.org">send money via sending emails</a>.
-              </p>
-            </li>
-            <li class="icon fa-camera" id="proteus">
-              <h3><a href="https://proteus.photos">Proteus: Perceptual-Hash based Image Provenance for AI</a></h3>
-              <p>
-                Demo'd a cryptographic framework (<a href="https://proteus.photos">proteus.photos</a>) to find if an image was generated by an AI, institution, or person. It is robust to transformations, while keeping generated and queried images private.
-              </p>
-            </li>
-            <li class="icon fa-shield" id="thesis">
-              <h3><a href="thesis.pdf">PLUME: ZK Voting on Ethereum, via Determinisic ECDSA Signatures</a></h3>
-              <p>
-                New nullifier scheme for pseudonymity on Ethereum, via ZK-SNARKs of a new signing scheme for ECDSA keys. Cryptographically proved security in <a href="thesis.pdf">Master's thesis</a>. Implementation <a href="https://github.com/plume-sig/zk-nullifier-sig/">here</a> and published as <a href="https://ethereum-magicians.org/t/erc-7524-plume-signature-in-wallets/15902">ERC-7524</a>.
-              </p>
-            </li>
-            <li class="icon fa-laptop" id="autolatex">
-              <h3><a href="https://www.autolatex.com">Auto-Latex Equations add-on for Google Docs</a></h3>
-              <p>
-                Coded, branded, marketed the add-on for real time LaTeX mathematical expression rendering. Over 30M users. 4.5+ star rating. More info at
-                <a href="https://www.autolatex.com">autolatex.com</a>. Worked with team to bring to Google Slides.
-              </p>
-            </li>
-            <li class="icon fa-house" id="lxm">
-              <h3><a href="https://www.lxm.house">lxm.house</a></h3>
-              <p>
-                Run a <a href="https://www.lxm.house">group house</a> with my friends <a href="https://www.rhotter.com">Raffi</a> and
-                <a href="https://www.marleyx.com">Marley</a> in Cambridge, MA. Recently moved to SF!
-              </p>
-            </li>
-            <li class="icon fa-lightbulb" id="ideas">
-              <h3><a href="https://github.com/Divide-By-0/ideas-for-projects-people-would-use">Ideas Microgrants Program</a></h3>
-              <p>
-                Give bounties on Github for people who build one of my
-                <a href="https://github.com/Divide-By-0/ideas-for-projects-people-would-use">software ideas</a> that don't exist yet that people would actually use. 11 grants given
-                so far.
-              </p>
-            </li>
-            <li class="icon fa-diagram-project" id="blog">
-              <h3><a href="https://blog.aayushg.com">Blog</a></h3>
-              <p>Thoughts on cryptography, movie recommendations, and essays on conviction at my <a href="https://blog.aayushg.com">blog</a>.</p>
-            </li>
-            <li class="icon fa-school" id="education">
-              <h3><a href="https://mitsoul.org">MIT SOUL</a> and <a href="https://coursetexts.org">Coursetexts</a></h3>
-              <p>
-                Helped open source course materials at <a href="https://mitsoul.org">MIT</a> and <a href="https://coursetexts.org">Harvard</a>.
-              </p>
-            </li>
-            <li class="icon fa-biohazard" id="eoe">
-              <h3><a href="https://docs.google.com/document/d/1bq_iZoRziY1EoLfdkwyQi6SyZyp1suVBQ05GwAdhqWE/edit?usp=sharing">EOE Diagnostics</a></h3>
-              <p>
-                Came up with a research proposal for a new diagnostic test for EOE, but never carried out the research due to funding constraints. I still think it would be a high impact bio project.
-              </p>
-            </li>
-            <li class="icon fa-circle" id="sigsing">
-              <h3><a href="https://sigsing.com">Signature Singularity Residency</a></h3>
-              <p>
-                Co-ran a residency program for talented teams working at the intersection of applied ZK proofs and digital signatures. Watch our <a href="https://www.youtube.com/watch?v=rT7zLiOYX8s"></a>demo day</a>!
-              </p>
-            </li>
-            <li class="icon fa-clock" id="stealing_time">
-              <h3><a href="stealing_time.pdf">Short Story: Stealing Time</a></h3>
-              <p>
-                Wrote a sci-fi short story about a world with localized time "freezes" in VR. Read it
-                <a href="https://www.aayushg.com/stealing_time.pdf">here</a>. Will give grants to attempted implementations of this in VR.
-              </p>
-            </li>
-            <li class="icon fa-comments" id="zkmessage">
-              <h3><a href="https://mirror.xyz/0x3FD6f213ae1B8a7B6bd8f14BE9BF316a5e5A5d28">ZK Message Board</a></h3>
-              <p>
-                Created prototype application to publish anonymous messages on behalf of a group on-chain. <a href="https://github.com/nulven/zk-message-board">Construction</a> explained as a Socratic dialogue
-                <a href="https://mirror.xyz/0x3FD6f213ae1B8a7B6bd8f14BE9BF316a5e5A5d28">here</a>.
-              </p>
-            </li>
-            <li class="icon fa-diamond" id="lipoker">
-              <h3><a href="https://www.lipoker.io">Lipoker.io</a></h3>
-              <p>Co-created the first videochat pokersite without signups or downloads. Over 10K+ weeky active players. Built team to 10 people and scaled to 700K+ games.</p>
-            </li>
-            <li class="icon fa-book-journal-whills" id="journal">
-              <h3><a href="https://docs.google.com/document/d/1jgcJfwKnsf_ML2HXW84LKCXK-cDjr3wowZaQID9M-Bc/edit">Crypto Journal Thoughts</a></h3>
-              <p>
-                Brainstormed some initial ideas for a better research journal.
-                <a href="https://docs.google.com/document/d/1jgcJfwKnsf_ML2HXW84LKCXK-cDjr3wowZaQID9M-Bc/edit">Scribbled some thoughts here.</a>
-              </p>
-            </li>
-            <li class="icon fa-arrows-to-eye" id="cult">
-              <h3><a href="https://docs.google.com/presentation/d/16SqTwe6nG09BTQiaHzj5sMFAWNphok9vd5jUKHy_mOA/edit#slide=id.g148593c8af6_0_56">The Individual</a></h3>
-              <p>
-                Helped spawn a cult at <a href="https://dwebcamp.org/">dweb camp</a> with the <a href="https://blackswan.support/">Black Swan Project</a>. An ethnographer
-                <a href="https://docs.google.com/document/d/1s9MnuKfldktUyegXVoiG2XVAussyi5PUSnHIjHDThNQ/edit?fbclid=IwAR01jY8bvgcjjbl4VyQ_towf-nLTCNgSLgIxgtwfOUQeDeBhoNtKy28-jZw"
-                  >wrote about us</a
-                >.
-              </p>
-            </li>
-            <li class="icon fa-vault" id="auction">
-              <h3><a href="https://blog.aayushg.com/posts/vickrey">Vickrey Auctions on-chain</a></h3>
-              <p>
-                Built <a href="https://blog.aayushg.com/posts/vickrey">first cheap, anonymous second-price auctions on chain</a> at EthBogota with a team from
-                <a href="https://twitter.com/13yearoldvc/">Jesse's hacker house</a>.
-              </p>
-            </li>
-            <li class="icon fa-dna" id="clocks">
-              <h3><a href="https://www.biorxiv.org/content/10.1101/2021.05.11.443707v1">Multi-Tissue Aging Clocks Research</a></h3>
-              <p>
-                Wrote novel algorithm to analyze biological age via RNA gene expression levels of multiple body tissues. Paper
-                <a href="https://www.biorxiv.org/content/10.1101/2021.05.11.443707v1">here</a>.
-              </p>
-            </li>
-            <li class="icon fa-paper-plane" id="drone">
-              <h3><a href="https://arxiv.org/abs/1801.01228">Autonomous Drone</a></h3>
-              <p>
-                Presented work at <a href="https://ras.papercept.net/conferences/conferences/IROS17/program/IROS17_ContentListWeb_4.html#weat15_05">IEEE IROS 2017</a> . Used
-                partially observable Markov decision processes to pilot a custom-built drone. Collaborated with <a href="https://danielb.co">Daniel Bessonov</a> and
-                <a href="https://lipatrick.me">Patrick Li</a>. <a href="https://arxiv.org/abs/1801.01228">Read paper here</a>.
-              </p>
-            </li>
-            <li class="icon fa-code" id="usaco">
-              <h3><a href="https://www.usaco.org/index.php?page=finalists16">USACO National Camp</a></h3>
-              <p>
-                Selected for <a href="https://www.usaco.org/index.php?page=finalists16">USA Computing Olympiad camp</a>, as top 30 students in algorithmic programming in nation out
-                of 3000+ students. Prepared for international IOI olympiad.
-              </p>
-            </li>
-            <li class="icon fa-circle-dot" id="damndaniel">
-              <h3>
-                <a href="https://www.saratogafalcon.org/content/students%E2%80%99-top-25-app-taken-down-after-%E2%80%98damn-daniel%E2%80%99-lawyers-threaten-legal-action"
-                  >Damn Daniel Button</a
-                >
-              </h3>
-              <p>
-                Came up with idea for trendy iOS App. Over 50,000 users. Surpassed Candy Crush on App Store Free Games chart. Joint work with
-                <a href="https://danielb.co">Daniel Bessonov</a> and <a href="https://lipatrick.me">Patrick Li</a>.
-                <a href="https://www.saratogafalcon.org/content/students%E2%80%99-top-25-app-taken-down-after-%E2%80%98damn-daniel%E2%80%99-lawyers-threaten-legal-action"
-                  >Almost got sued</a
-                >.
-              </p>
-            </li>
-            <li class="icon fa-cut" id="barbershop">
-              <h3><a href="http://mitfades.com">MIT Fades</a></h3>
-              <p>
-                Ran a hobby barbershop out of dorm bathroom. Pay what you want strategy, and many satisfied friends. Parody website at
-                <a href="http://mitfades.com">mitfades.com</a>.
-              </p>
-            </li>
-            <li class="icon fa-microphone" id="radioshow">
-              <h3><a href="http://chillvibesradio.com">Chill Vibes Radio</a></h3>
-              <p>
-                Cohosted radio show with Ritaank Tiwari out of MIT basement. Chatted and played music on alternate sundays at midnight. See our past setlists on
-                <a href="http://chillvibesradio.com">chillvibesradio.com</a>.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
+            <ul class="project-list">
+              <li>
+                <span class="icon fa-envelope"></span>
+                <div>
+                  <span class="project-title"><a href="https://zk.email">ZK Email: Anonymous Proofs about Email Data</a></span>
+                  <div class="project-desc">Co-steward proof platform to prove identity via received emails, whistleblow securely, and recover wallets with emails.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-camera"></span>
+                <div>
+                  <span class="project-title"><a href="https://proteus.photos">Proteus: Perceptual-Hash based Image Provenance for AI</a></span>
+                  <div class="project-desc">Framework to detect if an image was generated by AI, institution, or person; robust to transformations with privacy for queries. Built a state-of-the-art perceptual hash for fast copy detection.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-shield"></span>
+                <div>
+                  <span class="project-title"><a href="thesis.pdf">PLUME: ZK Voting on Ethereum, via Deterministic ECDSA Signatures</a></span>
+                  <div class="project-desc">New nullifier scheme for pseudonymity (ZK-SNARKs + ECDSA). <a href="https://github.com/plume-sig/zk-nullifier-sig/">Implementation</a>, proposed as <a href="https://ethereum-magicians.org/t/erc-7524-plume-signature-in-wallets/15902">ERC-7524</a>.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-laptop"></span>
+                <div>
+                  <span class="project-title"><a href="https://www.autolatex.com">Auto-Latex Equations (Google Docs)</a></span>
+                  <div class="project-desc">Real-time LaTeX rendering. 30M+ users, 4.5★; also on Google Slides.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-house"></span>
+                <div>
+                  <span class="project-title"><a href="https://www.lxm.house">lxm.house</a></span>
+                  <div class="project-desc">Group house project with friends; moved from Cambridge to SF.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-lightbulb"></span>
+                <div>
+                  <span class="project-title"><a href="https://github.com/Divide-By-0/ideas-for-projects-people-would-use">Ideas Microgrants Program</a></span>
+                  <div class="project-desc">Grants for building software ideas that people would actually use (11 given so far).</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-file-text"></span>
+                <div>
+                  <span class="project-title"><a href="https://blog.aayushg.com">Blog</a></span>
+                  <div class="project-desc">Thoughts on cryptography, recs, and essays on conviction.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-school"></span>
+                <div>
+                  <span class="project-title"><a href="https://mitsoul.org">MIT SOUL</a> and <a href="https://coursetexts.org">Coursetexts</a></span>
+                  <div class="project-desc">Open-sourcing course materials at MIT and Harvard.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-biohazard"></span>
+                <div>
+                  <span class="project-title"><a href="https://docs.google.com/document/d/1bq_iZoRziY1EoLfdkwyQi6SyZyp1suVBQ05GwAdhqWE/edit?usp=sharing">EOE Diagnostics</a></span>
+                  <div class="project-desc">Proposal for a new diagnostic test for EOE; high-impact bio project idea.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-circle"></span>
+                <div>
+                  <span class="project-title"><a href="https://sigsing.com">Signature Singularity Residency</a></span>
+                  <div class="project-desc">Residency for teams at the intersection of applied ZK proofs and signatures. Watch our <a href="https://www.youtube.com/watch?v=rT7zLiOYX8s">demo day</a>.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-clock"></span>
+                <div>
+                  <span class="project-title"><a href="stealing_time.pdf">Short Story: Stealing Time</a></span>
+                  <div class="project-desc">Sci-fi on localized time “freezes” in VR. <a href="https://www.aayushg.com/stealing_time.pdf">Read here</a>; grants for attempted implementations.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-comments"></span>
+                <div>
+                  <span class="project-title"><a href="https://mirror.xyz/0x3FD6f213ae1B8a7B6bd8f14BE9BF316a5e5A5d28">ZK Message Board</a></span>
+                  <div class="project-desc">Prototype to publish anonymous group messages on-chain. <a href="https://github.com/nulven/zk-message-board">Construction</a> as Socratic dialogue.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-diamond"></span>
+                <div>
+                  <span class="project-title"><a href="https://www.lipoker.io">Lipoker.io</a></span>
+                  <div class="project-desc">First videochat pokersite without signups/downloads. 10K+ WAU; scaled to 700K+ games.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-book-journal-whills"></span>
+                <div>
+                  <span class="project-title"><a href="https://docs.google.com/document/d/1jgcJfwKnsf_ML2HXW84LKCXK-cDjr3wowZaQID9M-Bc/edit">Crypto Journal Thoughts</a></span>
+                  <div class="project-desc">Ideas for a better research journal.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-arrows-to-eye"></span>
+                <div>
+                  <span class="project-title"><a href="https://docs.google.com/presentation/d/16SqTwe6nG09BTQiaHzj5sMFAWNphok9vd5jUKHy_mOA/edit#slide=id.g148593c8af6_0_56">The Individual</a></span>
+                  <div class="project-desc">Helped spawn a cult at <a href="https://dwebcamp.org/">dweb camp</a> with Black Swan; <a href="https://docs.google.com/document/d/1s9MnuKfldktUyegXVoiG2XVAussyi5PUSnHIjHDThNQ/edit?fbclid=IwAR01jY8bvgcjjbl4VyQ_towf-nLTCNgSLgIxgtwfOUQeDeBhoNtKy28-jZw">ethnography writeup</a>.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-vault"></span>
+                <div>
+                  <span class="project-title"><a href="https://blog.aayushg.com/posts/vickrey">Vickrey Auctions on-chain</a></span>
+                  <div class="project-desc">First cheap, anonymous second-price auctions on chain (EthBogotá; with <a href="https://twitter.com/13yearoldvc/">Jesse’s house</a>).</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-dna"></span>
+                <div>
+                  <span class="project-title"><a href="https://www.biorxiv.org/content/10.1101/2021.05.11.443707v1">Multi-Tissue Aging Clocks Research</a></span>
+                  <div class="project-desc">Novel algorithm via RNA expression across tissues.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-paper-plane"></span>
+                <div>
+                  <span class="project-title"><a href="https://arxiv.org/abs/1801.01228">Autonomous Drone</a></span>
+                  <div class="project-desc">IROS’17; POMDPs to pilot a custom-built drone. With <a href="https://danielb.co">Daniel</a>, <a href="https://lipatrick.me">Patrick</a>.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-code"></span>
+                <div>
+                  <span class="project-title"><a href="https://www.usaco.org/index.php?page=finalists16">USACO National Camp</a></span>
+                  <div class="project-desc">Top 30 nationwide (of 3000+) for algorithmic programming; prepped for IOI.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-circle-dot"></span>
+                <div>
+                  <span class="project-title"><a href="https://www.saratogafalcon.org/content/students%E2%80%99-top-25-app-taken-down-after-%E2%80%98damn-daniel%E2%80%99-lawyers-threaten-legal-action">Damn Daniel Button</a></span>
+                  <div class="project-desc">50k+ users; surpassed Candy Crush in Free Games; nearly got sued. With <a href="https://danielb.co">Daniel</a>, <a href="https://lipatrick.me">Patrick</a>.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-cut"></span>
+                <div>
+                  <span class="project-title"><a href="http://mitfades.com">MIT Fades</a></span>
+                  <div class="project-desc">Hobby barbershop; pay-what-you-want; parody site.</div>
+                </div>
+              </li>
+              <li>
+                <span class="icon fa-microphone"></span>
+                <div>
+                  <span class="project-title"><a href="http://chillvibesradio.com">Chill Vibes Radio</a></span>
+                  <div class="project-desc">Cohosted night radio show; past setlists online.</div>
+                </div>
+              </li>
+            </ul>
+          </section>
 
-      <!-- Two -->
-      <section id="experience" class="wrapper alt style1">
-        <!-- <section class="spotlight">
-						<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-							<h2>Code Wrangler</h2>
-							<p>Done research or released products with C, C++, Julia, Python, SQL, Go, Java, JS. Pictured here discussing my reinforcement learning work at <a href="https://sites.google.com/site/baylearn2017/">BayLearn '17</a> with Apple AI Lab director.</b></p>
-						</div>
-					</section> -->
+          <section id="experience">
+            <h2>Videos</h2>
+            <div class="carousel" id="video-carousel">
+              <iframe id="video-frame" src="https://www.youtube.com/embed/3jCKdxQ9Pfw?mute=1&rel=0" title="Video"></iframe>
+              <div class="carousel-controls">
+                <button id="prev-video" aria-label="Previous video">◀</button>
+                <div class="title" id="video-title">ZK Email to Vitalik (Zuconnect ’23)</div>
+                <div class="count" id="video-count">1 / 9</div>
+                <button id="next-video" aria-label="Next video">▶</button>
+              </div>
+            </div>
+            <div class="muted" style="margin-top: 0.5rem;">
+              Talks include ZK Email at Zuconnect, ZK Data Guilds, Morpheus, ZK Social, PLUME at Stanford SBC/EthBogotá/ZKSummit, and ZK Podcast #302.
+            </div>
+          </section>
+        </main>
 
-        <section class="spotlight">
-          <!-- https://www.youtube.com/watch?v=2bWKxjtQMho&list=PLNK7oFq6eaEwtFRrbZP5c12FMq9yygTzg&index=10 -->
-          <div class="image" style="margin-left: 20px;">
-            <iframe align="left" width="640" height="400" src="https://www.youtube.com/embed/3jCKdxQ9Pfw?mute=1"></iframe>
-          </div>
-          <!-- <div class="images"><img src="images/pic02.jpg" alt="" /></div> -->
-          <div class="content">
-            <h2>Research Explorer</h2>
-            <p>
-              Understand my work better! Check out: <br/>
-              - <a href="https://www.youtube.com/watch?v=3jCKdxQ9Pfw">ZK Email to Vitalik at Zuconnect '23</a> (left). <br/>
-              - <a href="https://www.youtube.com/watch?v=GEWuGtsjATw&list=PLa81rqLujkvsdo5XXCfE6mp0XmYzXtSKU&index=9">ZK Email at Eth Denver</a>
-              - <a href="https://www.youtube.com/watch?v=v6CQXDSgQxk">ZK Data Guilds at Zuzalu Public Goods Day '23</a>. <br/>
-              - <a href="https://www.youtube.com/watch?v=OF0S5IVN-UE">Morpheus at Zuconnect AI Day '23</a>. <br/>
-              - hot takes on <a href="https://www.youtube.com/watch?v=uvLpam9ui18">ZK Social at ZK Day in Istanbul '23</a>.<br/>
-              - <a href="https://www.youtube.com/watch?v=2bWKxjtQMho">PLUME at Stanford SBC '22</a>,
-              <a href="https://www.youtube.com/watch?v=dZKFG2i1gec">EthBogota '22</a>, and <a href="https://www.youtube.com/watch?v=6ajBnMdJGoY">ZKSummit 8 '22</a>.<br/>
-              - <a href="https://www.youtube.com/watch?v=vFYUWRks7Kg">email wallet on ZK Podcast #302</a>.<br/> <br/>
-              Previously talked on <a href="https://www.youtube.com/watch?v=CNLh640fOWM&list=PLJijNYoOwnssZzIIxfochRxo5QRW5Uvfg&index=8">ZK airdrops at Devconnect '22</a> and
-              <a href="https://ras.papercept.net/conferences/conferences/IROS17/program/IROS17_ContentListWeb_4.html#weat15_05">drones at IEEE IROS '17</a>. Gave
-              <a href="https://www.youtube.com/embed/q8O_2IsR2Jw?mute=1">technical deep dive of Alphafold 2</a> to MIT Undergrad AI Group (below). <br />
-            </p>
-          </div>
-        </section>
-        <section class="spotlight">
-          <div class="image" style="margin-right: 20px;">
-            <iframe align="right" width="640" height="400" src="https://www.youtube.com/embed/q8O_2IsR2Jw?mute=1"></iframe>
-          </div>
-          <!-- <div class="image"><img src="images/pic03.jpg" alt="" /></div> -->
-          <div class="content">
-            <h2>Shenanigans</h2>
-            <p>
-              Co-created MIT's <a href="https://aimlabs.mit.edu/">AIM Labs</a>, an applied machine learning project club. Led an iteration of
-              <a href="https://hacklodge.org">Hack Lodge</a> and mentored/attended many times. Co-ran a reflective cabin retreat and
-              <a href="https://docs.google.com/document/d/1TW0HXotIB1ahr5GuJuQVkczoChNIwkIy5o3KiWgbvIs/edit#">co-wrote a guide to run your own</a>. Ran a
-              <a href="https://homebased.dev">project-based group house in Thailand for Jan 2023</a>. Run
-              <a href="https://github.com/Divide-By-0/ideas-for-projects-people-would-use/">microgrants program, where I give away my best ideas</a>.
-            </p>
-          </div>
-        </section>
-      </section>
+        <aside class="sidebar">
+          <section class="box">
+            <h3>Thoughts</h3>
+            <div class="muted" id="thoughts-loading">Loading…</div>
+            <ul class="micro-list" id="thoughts-list" hidden></ul>
+            <div class="muted" id="thoughts-hint" hidden>↓</div>
+            <div class="muted" id="thoughts-fallback" hidden>
+              Couldn’t fetch headings; view live:
+              <a href="https://blog.aayushg.com/thoughts" target="_blank">Thoughts</a>.
+            </div>
+          </section>
+
+          <section class="box">
+            <h3>Twitter</h3>
+            <a class="twitter-timeline" data-theme="dark" data-height="500" data-width="360" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/yush_g?ref_src=twsrc%5Etfw">Tweets by @yush_g</a>
+          </section>
+        </aside>
+      </div>
 
       <!-- Footer -->
       <footer id="footer">
         <ul class="icons">
-          <li>
-            <a href="https://www.linkedin.com/in/aayushgupta0/" target="_blank">
-              <span class="icon fa-linkedin">
-                <span class="label">LinkedIn</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.github.com/Divide-By-0" target="_blank">
-              <span class="icon fa-github">
-                <span class="label">Github</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="resume.pdf" target="_blank">
-              <span class="icon fa-pen-nib">
-                <span class="label">Resume</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:aayushg@mit.edu" target="_blank">
-              <span class="icon fa-envelope">
-                <span class="label">Email</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://blog.aayushg.com" target="_blank">
-              <span class="icon fa-file-text">
-                <span class="label">Blog</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com/yush_g" target="_blank">
-              <span class="icon fa-twitter">
-                <span class="label">Twitter</span>
-              </span>
-            </a>
-          </li>
+          <li><a href="https://www.linkedin.com/in/aayushgupta0/" target="_blank"><span class="icon fa-linkedin"></span> LinkedIn</a></li>
+          <li><a href="https://www.github.com/Divide-By-0" target="_blank"><span class="icon fa-github"></span> GitHub</a></li>
+          <li><a href="resume.pdf" target="_blank"><span class="icon fa-pen-nib"></span> Resume</a></li>
+          <li><a href="mailto:aayushg@mit.edu" target="_blank"><span class="icon fa-envelope"></span> Email</a></li>
+          <li><a href="https://blog.aayushg.com" target="_blank"><span class="icon fa-file-text"></span> Blog</a></li>
+          <li><a href="https://www.twitter.com/yush_g" target="_blank"><span class="icon fa-twitter"></span> Twitter</a></li>
         </ul>
         <ul class="copyright">
           <li>&copy; Aayush Gupta</li>
@@ -378,7 +533,123 @@
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/util.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
+
+    <!-- Twitter widgets -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <!-- Videos carousel + Thoughts headers (with CORS-friendly fallback) -->
+    <script>
+      // --- Video carousel ---
+      const videos = [
+        { id: "3jCKdxQ9Pfw", title: "ZK Email to Vitalik (Zuconnect ’23)" },
+        { id: "v6CQXDSgQxk", title: "ZK Data Guilds at Zuzalu ’23" },
+        { id: "OF0S5IVN-UE", title: "Morpheus at Zuconnect AI Day ’23" },
+        { id: "uvLpam9ui18", title: "Hot takes on ZK Social (Istanbul ’23)" },
+        { id: "2bWKxjtQMho", title: "PLUME at Stanford SBC ’22" },
+        { id: "dZKFG2i1gec", title: "PLUME at EthBogotá ’22" },
+        { id: "6ajBnMdJGoY", title: "PLUME at ZKSummit 8 ’22" },
+        { id: "vFYUWRks7Kg", title: "Email wallet on ZK Podcast #302" },
+        { id: "CNLh640fOWM", title: "ZK Airdrops at Devconnect ’22" }
+      ];
+      let vidIdx = 0;
+      const frame = document.getElementById('video-frame');
+      const titleEl = document.getElementById('video-title');
+      const countEl = document.getElementById('video-count');
+      function setVideo(i) {
+        vidIdx = (i + videos.length) % videos.length;
+        const v = videos[vidIdx];
+        frame.src = "https://www.youtube.com/embed/" + v.id + "?mute=1&rel=0";
+        titleEl.textContent = v.title;
+        countEl.textContent = (vidIdx + 1) + " / " + videos.length;
+      }
+      document.getElementById('prev-video').addEventListener('click', () => setVideo(vidIdx - 1));
+      document.getElementById('next-video').addEventListener('click', () => setVideo(vidIdx + 1));
+      // Auto-advance to the right
+      let autoTimer = setInterval(() => setVideo(vidIdx + 1), 7000);
+      const carouselEl = document.getElementById('video-carousel');
+      carouselEl.addEventListener('mouseenter', () => { clearInterval(autoTimer); });
+      carouselEl.addEventListener('mouseleave', () => { autoTimer = setInterval(() => setVideo(vidIdx + 1), 7000); });
+      setVideo(vidIdx);
+
+      // --- Thoughts headers (CORS-friendly; h3 only; Markdown fallback + deep links) ---
+      (async function loadThoughtHeaders() {
+        const list = document.getElementById('thoughts-list');
+        const loading = document.getElementById('thoughts-loading');
+        const fallback = document.getElementById('thoughts-fallback');
+        const url = 'https://blog.aayushg.com/thoughts';
+
+        async function fetchText(u) {
+          const res = await fetch(u);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return await res.text();
+        }
+        function slugify(s) {
+          return (s || '')
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-');
+        }
+
+        function render(items) {
+          list.innerHTML = '';
+          items.forEach(item => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.textContent = item.text;
+            const anchor = item.id ? item.id : slugify(item.text);
+            a.href = url + '#' + encodeURIComponent(anchor);
+            a.target = '_blank';
+            li.appendChild(a);
+            list.appendChild(li);
+          });
+          loading.hidden = true;
+          list.hidden = false;
+          // Show hint only if scrollable
+          const hint = document.getElementById('thoughts-hint');
+          const isScrollable = list.scrollHeight > list.clientHeight + 2;
+          hint.hidden = !isScrollable;
+          // Update hint visibility when user scrolls to bottom
+          list.addEventListener('scroll', () => {
+            const atBottom = list.scrollTop + list.clientHeight >= list.scrollHeight - 1;
+            hint.hidden = atBottom;
+          });
+        }
+
+        try {
+          let html;
+          try {
+            // Try direct (if CORS allows)
+            html = await fetchText(url);
+          } catch {
+            // Fallback: read-only CORS-friendly proxy
+            html = await fetchText('https://r.jina.ai/http://blog.aayushg.com/thoughts');
+          }
+
+          // Prefer actual HTML parse
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          let h3s = Array.from(doc.querySelectorAll('h3'))
+            .map(h => ({ text: (h.textContent || '').trim(), id: h.id || null }))
+            .filter(h => h.text);
+
+          if (h3s.length === 0) {
+            // Proxy may return markdown/text: parse ### headings
+            const parsed = html.split('\n')
+              .filter(l => l.trim().startsWith('### '))
+              .map(l => ({ text: l.replace(/^###\s+/, '').trim(), id: null }))
+              .filter(h => h.text);
+            h3s = parsed;
+          }
+
+          if (h3s.length === 0) throw new Error('No h3 headings found');
+
+          render(h3s);
+        } catch (e) {
+          loading.hidden = true;
+          fallback.hidden = false;
+        }
+      })();
+    </script>
   </body>
 </html>
