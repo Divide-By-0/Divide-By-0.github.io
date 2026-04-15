@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-04-15T22:44:23Z",
+  "source": {
+    "provider": "GitHub Actions",
+    "repo": "Divide-By-0/Divide-By-0.github.io",
+    "branch": "master",
+    "intervalMinutes": 5
+  },
+  "services": {
+    "frontend": {
+      "key": "frontend",
+      "name": "Frontend",
+      "description": "Public site availability checked from outside production.",
+      "method": "HTTP GET",
+      "target": "https://lipoker.io/",
+      "samples": [
+        {
+          "t": "2026-04-15T22:44:23Z",
+          "s": "up",
+          "ms": 186.3,
+          "r": "HTTP 200"
+        }
+      ]
+    },
+    "backend": {
+      "key": "backend",
+      "name": "Backend",
+      "description": "API health endpoint checked from outside production.",
+      "method": "HTTP GET",
+      "target": "https://api.lipoker.io/api/health",
+      "samples": [
+        {
+          "t": "2026-04-15T22:44:24Z",
+          "s": "up",
+          "ms": 168.31,
+          "r": "HTTP 200"
+        }
+      ]
+    },
+    "database": {
+      "key": "database",
+      "name": "Database",
+      "description": "HTTP readiness probe from a GitHub-hosted runner.",
+      "method": "HTTP GET",
+      "target": "https://api.lipoker.io/api/ready",
+      "samples": [
+        {
+          "t": "2026-04-15T22:44:24Z",
+          "s": "up",
+          "ms": 186.11,
+          "r": "HTTP 200"
+        }
+      ]
+    }
+  }
+}
