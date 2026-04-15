@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T22:44:23Z",
+  "generatedAt": "2026-04-15T22:47:23Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -19,6 +19,12 @@
           "s": "up",
           "ms": 186.3,
           "r": "HTTP 200"
+        },
+        {
+          "t": "2026-04-15T22:47:23Z",
+          "s": "up",
+          "ms": 141.16,
+          "r": "HTTP 200"
         }
       ]
     },
@@ -34,21 +40,33 @@
           "s": "up",
           "ms": 168.31,
           "r": "HTTP 200"
+        },
+        {
+          "t": "2026-04-15T22:47:23Z",
+          "s": "up",
+          "ms": 107.96,
+          "r": "HTTP 200"
         }
       ]
     },
     "database": {
       "key": "database",
       "name": "Database",
-      "description": "HTTP readiness probe from a GitHub-hosted runner.",
-      "method": "HTTP GET",
-      "target": "https://api.lipoker.io/api/ready",
+      "description": "Direct SQL probe from a GitHub-hosted runner through Cloud SQL Proxy.",
+      "method": "Direct SQL",
+      "target": "Cloud SQL prod-db",
       "samples": [
         {
           "t": "2026-04-15T22:44:24Z",
           "s": "up",
           "ms": 186.11,
           "r": "HTTP 200"
+        },
+        {
+          "t": "2026-04-15T22:47:23Z",
+          "s": "up",
+          "ms": 1057.08,
+          "r": "SELECT 1"
         }
       ]
     }

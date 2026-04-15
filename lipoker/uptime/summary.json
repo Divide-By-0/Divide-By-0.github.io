@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T22:44:23Z",
+  "generatedAt": "2026-04-15T22:47:23Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-04-15T22:44:23Z",
-      "latestLatencyMs": 186.3,
+      "checkedAt": "2026-04-15T22:47:23Z",
+      "latestLatencyMs": 141.16,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-04-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 186.3,
-          "checks": 1
+          "avgLatencyMs": 163.73,
+          "checks": 2
         }
       ],
       "incidents": []
@@ -213,8 +213,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-04-15T22:44:24Z",
-      "latestLatencyMs": 168.31,
+      "checkedAt": "2026-04-15T22:47:23Z",
+      "latestLatencyMs": 107.96,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -399,8 +399,8 @@
         {
           "date": "2026-04-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 168.31,
-          "checks": 1
+          "avgLatencyMs": 138.13,
+          "checks": 2
         }
       ],
       "incidents": []
@@ -408,13 +408,13 @@
     {
       "key": "database",
       "name": "Database",
-      "description": "HTTP readiness probe from a GitHub-hosted runner.",
-      "method": "HTTP GET",
-      "target": "https://api.lipoker.io/api/ready",
+      "description": "Direct SQL probe from a GitHub-hosted runner through Cloud SQL Proxy.",
+      "method": "Direct SQL",
+      "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-04-15T22:44:24Z",
-      "latestLatencyMs": 186.11,
-      "latestReason": "HTTP 200",
+      "checkedAt": "2026-04-15T22:47:23Z",
+      "latestLatencyMs": 1057.08,
+      "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
@@ -598,8 +598,8 @@
         {
           "date": "2026-04-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 186.11,
-          "checks": 1
+          "avgLatencyMs": 621.6,
+          "checks": 2
         }
       ],
       "incidents": []
