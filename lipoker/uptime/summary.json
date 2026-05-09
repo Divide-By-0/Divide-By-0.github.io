@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-09T19:27:45Z",
+  "generatedAt": "2026-05-09T19:50:53Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -13,14 +13,14 @@
       "description": "Public site availability checked from outside production.",
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
-      "status": "down",
-      "checkedAt": "2026-05-09T19:27:45Z",
-      "latestLatencyMs": 153.91,
-      "latestReason": "HTTP 502",
+      "status": "up",
+      "checkedAt": "2026-05-09T19:50:53Z",
+      "latestLatencyMs": 195.69,
+      "latestReason": "HTTP 200",
       "uptimePct": {
-        "24h": 97.8261,
+        "24h": 97.8723,
         "7d": 99.6337,
-        "30d": 99.9047
+        "30d": 99.9048
       },
       "daily": [
         {
@@ -199,15 +199,15 @@
         },
         {
           "date": "2026-05-09",
-          "uptimePct": 97.2222,
-          "avgLatencyMs": 150.73,
-          "checks": 36
+          "uptimePct": 97.2973,
+          "avgLatencyMs": 151.98,
+          "checks": 37
         }
       ],
       "incidents": [
         {
           "startedAt": "2026-05-09T19:27:45Z",
-          "endedAt": null,
+          "endedAt": "2026-05-09T19:50:53Z",
           "durationMinutes": 5,
           "reason": "HTTP 502"
         }
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-09T19:27:45Z",
-      "latestLatencyMs": 188.49,
+      "checkedAt": "2026-05-09T19:50:53Z",
+      "latestLatencyMs": 174.0,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-09",
           "uptimePct": 100.0,
-          "avgLatencyMs": 163.45,
-          "checks": 36
+          "avgLatencyMs": 163.73,
+          "checks": 37
         }
       ],
       "incidents": []
@@ -419,8 +419,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-09T19:27:46Z",
-      "latestLatencyMs": 1134.8,
+      "checkedAt": "2026-05-09T19:50:53Z",
+      "latestLatencyMs": 1286.56,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -605,8 +605,8 @@
         {
           "date": "2026-05-09",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1528.61,
-          "checks": 36
+          "avgLatencyMs": 1522.07,
+          "checks": 37
         }
       ],
       "incidents": []
