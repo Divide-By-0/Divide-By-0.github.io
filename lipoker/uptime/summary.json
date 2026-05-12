@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T23:13:46Z",
+  "generatedAt": "2026-05-12T23:39:32Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,12 +14,12 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-12T23:13:46Z",
-      "latestLatencyMs": 90.39,
+      "checkedAt": "2026-05-12T23:39:32Z",
+      "latestLatencyMs": 166.88,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
-        "7d": 99.6139,
+        "7d": 99.6124,
         "30d": 99.9142
       },
       "daily": [
@@ -200,8 +200,8 @@
         {
           "date": "2026-05-12",
           "uptimePct": 100.0,
-          "avgLatencyMs": 200.97,
-          "checks": 29
+          "avgLatencyMs": 199.84,
+          "checks": 30
         }
       ],
       "incidents": [
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-12T23:13:47Z",
-      "latestLatencyMs": 264.82,
+      "checkedAt": "2026-05-12T23:39:32Z",
+      "latestLatencyMs": 167.14,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-12",
           "uptimePct": 100.0,
-          "avgLatencyMs": 198.1,
-          "checks": 29
+          "avgLatencyMs": 197.07,
+          "checks": 30
         }
       ],
       "incidents": []
@@ -419,8 +419,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-12T23:13:47Z",
-      "latestLatencyMs": 1895.2,
+      "checkedAt": "2026-05-12T23:39:33Z",
+      "latestLatencyMs": 1751.86,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -605,8 +605,8 @@
         {
           "date": "2026-05-12",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1597.42,
-          "checks": 29
+          "avgLatencyMs": 1602.57,
+          "checks": 30
         }
       ],
       "incidents": []
