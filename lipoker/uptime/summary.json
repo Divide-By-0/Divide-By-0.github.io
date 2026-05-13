@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T14:15:52Z",
+  "generatedAt": "2026-05-13T15:19:44Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,13 +14,13 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-13T14:15:52Z",
-      "latestLatencyMs": 123.75,
+      "checkedAt": "2026-05-13T15:19:44Z",
+      "latestLatencyMs": 195.81,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
         "7d": 99.6139,
-        "30d": 99.9153
+        "30d": 99.9154
       },
       "daily": [
         {
@@ -201,7 +201,7 @@
           "date": "2026-05-13",
           "uptimePct": 100.0,
           "avgLatencyMs": 195.86,
-          "checks": 15
+          "checks": 16
         }
       ],
       "incidents": [
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-13T14:15:52Z",
-      "latestLatencyMs": 133.75,
+      "checkedAt": "2026-05-13T15:19:44Z",
+      "latestLatencyMs": 125.22,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-13",
           "uptimePct": 100.0,
-          "avgLatencyMs": 154.7,
-          "checks": 15
+          "avgLatencyMs": 152.86,
+          "checks": 16
         }
       ],
       "incidents": []
@@ -419,8 +419,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-13T14:15:53Z",
-      "latestLatencyMs": 1791.62,
+      "checkedAt": "2026-05-13T15:19:44Z",
+      "latestLatencyMs": 1249.26,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -605,8 +605,8 @@
         {
           "date": "2026-05-13",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1678.76,
-          "checks": 15
+          "avgLatencyMs": 1651.92,
+          "checks": 16
         }
       ],
       "incidents": []
