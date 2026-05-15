@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T10:21:52Z",
+  "generatedAt": "2026-05-15T11:12:47Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,12 +14,12 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-15T10:21:52Z",
-      "latestLatencyMs": 277.71,
+      "checkedAt": "2026-05-15T11:12:47Z",
+      "latestLatencyMs": 151.87,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
-        "7d": 99.6,
+        "7d": 99.5984,
         "30d": 99.9192
       },
       "daily": [
@@ -200,8 +200,8 @@
         {
           "date": "2026-05-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 181.33,
-          "checks": 10
+          "avgLatencyMs": 178.65,
+          "checks": 11
         }
       ],
       "incidents": [
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-15T10:21:52Z",
-      "latestLatencyMs": 133.04,
+      "checkedAt": "2026-05-15T11:12:47Z",
+      "latestLatencyMs": 132.63,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 195.36,
-          "checks": 10
+          "avgLatencyMs": 189.66,
+          "checks": 11
         }
       ],
       "incidents": []
@@ -419,8 +419,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-15T10:21:52Z",
-      "latestLatencyMs": 1642.61,
+      "checkedAt": "2026-05-15T11:12:48Z",
+      "latestLatencyMs": 1574.84,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -605,8 +605,8 @@
         {
           "date": "2026-05-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1960.05,
-          "checks": 10
+          "avgLatencyMs": 1925.03,
+          "checks": 11
         }
       ],
       "incidents": []
