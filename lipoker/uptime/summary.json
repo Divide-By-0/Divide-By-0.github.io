@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T14:06:58Z",
+  "generatedAt": "2026-05-15T15:02:12Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,12 +14,12 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-15T14:06:58Z",
-      "latestLatencyMs": 116.8,
+      "checkedAt": "2026-05-15T15:02:12Z",
+      "latestLatencyMs": 175.4,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
-        "7d": 99.5984,
+        "7d": 99.5968,
         "30d": 99.9195
       },
       "daily": [
@@ -200,8 +200,8 @@
         {
           "date": "2026-05-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 166.8,
-          "checks": 15
+          "avgLatencyMs": 167.34,
+          "checks": 16
         }
       ],
       "incidents": [
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-15T14:06:59Z",
-      "latestLatencyMs": 186.46,
+      "checkedAt": "2026-05-15T15:02:12Z",
+      "latestLatencyMs": 164.4,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 181.27,
-          "checks": 15
+          "avgLatencyMs": 180.22,
+          "checks": 16
         }
       ],
       "incidents": []
@@ -419,8 +419,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-15T14:06:59Z",
-      "latestLatencyMs": 1533.58,
+      "checkedAt": "2026-05-15T15:02:12Z",
+      "latestLatencyMs": 1279.95,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -605,8 +605,8 @@
         {
           "date": "2026-05-15",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1831.56,
-          "checks": 15
+          "avgLatencyMs": 1797.08,
+          "checks": 16
         }
       ],
       "incidents": []
