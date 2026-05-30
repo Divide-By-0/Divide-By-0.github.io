@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T17:08:28Z",
+  "generatedAt": "2026-05-30T17:35:41Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-30T17:08:28Z",
-      "latestLatencyMs": 256.08,
+      "checkedAt": "2026-05-30T17:35:41Z",
+      "latestLatencyMs": 265.09,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-05-30",
           "uptimePct": 100.0,
-          "avgLatencyMs": 202.36,
-          "checks": 24
+          "avgLatencyMs": 204.87,
+          "checks": 25
         }
       ],
       "incidents": [
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-30T17:08:28Z",
-      "latestLatencyMs": 136.24,
+      "checkedAt": "2026-05-30T17:35:41Z",
+      "latestLatencyMs": 119.23,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 97.0588,
@@ -405,9 +405,9 @@
         },
         {
           "date": "2026-05-30",
-          "uptimePct": 95.8333,
-          "avgLatencyMs": 196.84,
-          "checks": 24
+          "uptimePct": 96.0,
+          "avgLatencyMs": 193.61,
+          "checks": 25
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-30T17:08:28Z",
-      "latestLatencyMs": 2151.09,
+      "checkedAt": "2026-05-30T17:35:41Z",
+      "latestLatencyMs": 1675.67,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-05-30",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1568.48,
-          "checks": 24
+          "avgLatencyMs": 1572.77,
+          "checks": 25
         }
       ],
       "incidents": [
