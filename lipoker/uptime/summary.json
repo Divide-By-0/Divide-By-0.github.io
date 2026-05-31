@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T09:58:13Z",
+  "generatedAt": "2026-05-31T10:46:27Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-31T09:58:13Z",
-      "latestLatencyMs": 173.65,
+      "checkedAt": "2026-05-31T10:46:27Z",
+      "latestLatencyMs": 144.07,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-05-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 214.25,
-          "checks": 9
+          "avgLatencyMs": 207.23,
+          "checks": 10
         }
       ],
       "incidents": [
@@ -220,12 +220,12 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-31T09:58:13Z",
-      "latestLatencyMs": 182.34,
+      "checkedAt": "2026-05-31T10:46:27Z",
+      "latestLatencyMs": 260.06,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 97.3684,
-        "7d": 99.4975,
+        "7d": 99.4949,
         "30d": 99.9022
       },
       "daily": [
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 207.34,
-          "checks": 9
+          "avgLatencyMs": 212.61,
+          "checks": 10
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-31T09:58:14Z",
-      "latestLatencyMs": 1534.93,
+      "checkedAt": "2026-05-31T10:46:27Z",
+      "latestLatencyMs": 1293.11,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-05-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1547.82,
-          "checks": 9
+          "avgLatencyMs": 1522.35,
+          "checks": 10
         }
       ],
       "incidents": [
