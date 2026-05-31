@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T09:01:11Z",
+  "generatedAt": "2026-05-31T09:58:13Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-05-31T09:01:11Z",
-      "latestLatencyMs": 299.06,
+      "checkedAt": "2026-05-31T09:58:13Z",
+      "latestLatencyMs": 173.65,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-05-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 219.32,
-          "checks": 8
+          "avgLatencyMs": 214.25,
+          "checks": 9
         }
       ],
       "incidents": [
@@ -220,11 +220,11 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-05-31T09:01:12Z",
-      "latestLatencyMs": 303.55,
+      "checkedAt": "2026-05-31T09:58:13Z",
+      "latestLatencyMs": 182.34,
       "latestReason": "HTTP 200",
       "uptimePct": {
-        "24h": 97.4359,
+        "24h": 97.3684,
         "7d": 99.4975,
         "30d": 99.9022
       },
@@ -406,8 +406,8 @@
         {
           "date": "2026-05-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 210.47,
-          "checks": 8
+          "avgLatencyMs": 207.34,
+          "checks": 9
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-05-31T09:01:12Z",
-      "latestLatencyMs": 1415.96,
+      "checkedAt": "2026-05-31T09:58:14Z",
+      "latestLatencyMs": 1534.93,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-05-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1549.44,
-          "checks": 8
+          "avgLatencyMs": 1547.82,
+          "checks": 9
         }
       ],
       "incidents": [
