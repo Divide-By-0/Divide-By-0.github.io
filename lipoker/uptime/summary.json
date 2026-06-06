@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T03:19:19Z",
+  "generatedAt": "2026-06-06T04:42:20Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-06-06T03:19:19Z",
-      "latestLatencyMs": 148.69,
+      "checkedAt": "2026-06-06T04:42:20Z",
+      "latestLatencyMs": 347.77,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-06-06",
           "uptimePct": 100.0,
-          "avgLatencyMs": 143.19,
-          "checks": 4
+          "avgLatencyMs": 184.11,
+          "checks": 5
         }
       ],
       "incidents": [
@@ -220,12 +220,12 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-06-06T03:19:20Z",
-      "latestLatencyMs": 146.69,
+      "checkedAt": "2026-06-06T04:42:21Z",
+      "latestLatencyMs": 119.5,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
-        "7d": 99.4444,
+        "7d": 99.4413,
         "30d": 99.8912
       },
       "daily": [
@@ -406,8 +406,8 @@
         {
           "date": "2026-06-06",
           "uptimePct": 100.0,
-          "avgLatencyMs": 148.84,
-          "checks": 4
+          "avgLatencyMs": 142.98,
+          "checks": 5
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-06-06T03:19:20Z",
-      "latestLatencyMs": 1868.19,
+      "checkedAt": "2026-06-06T04:42:21Z",
+      "latestLatencyMs": 1466.95,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-06-06",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1876.34,
-          "checks": 4
+          "avgLatencyMs": 1794.46,
+          "checks": 5
         }
       ],
       "incidents": [
