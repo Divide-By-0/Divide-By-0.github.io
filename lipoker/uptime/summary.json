@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T10:06:14Z",
+  "generatedAt": "2026-06-08T11:48:50Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,13 +14,13 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-06-08T10:06:14Z",
-      "latestLatencyMs": 165.36,
+      "checkedAt": "2026-06-08T11:48:50Z",
+      "latestLatencyMs": 158.65,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
-        "30d": 99.8902
+        "30d": 99.8899
       },
       "daily": [
         {
@@ -200,8 +200,8 @@
         {
           "date": "2026-06-08",
           "uptimePct": 100.0,
-          "avgLatencyMs": 192.85,
-          "checks": 7
+          "avgLatencyMs": 188.58,
+          "checks": 8
         }
       ],
       "incidents": [
@@ -220,13 +220,13 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-06-08T10:06:14Z",
-      "latestLatencyMs": 181.72,
+      "checkedAt": "2026-06-08T11:48:50Z",
+      "latestLatencyMs": 164.6,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
-        "30d": 99.8902
+        "30d": 99.8899
       },
       "daily": [
         {
@@ -406,8 +406,8 @@
         {
           "date": "2026-06-08",
           "uptimePct": 100.0,
-          "avgLatencyMs": 166.18,
-          "checks": 7
+          "avgLatencyMs": 165.98,
+          "checks": 8
         }
       ],
       "incidents": [
@@ -426,13 +426,13 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-06-08T10:06:14Z",
-      "latestLatencyMs": 1843.55,
+      "checkedAt": "2026-06-08T11:48:50Z",
+      "latestLatencyMs": 1288.5,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
-        "30d": 99.8902
+        "30d": 99.8899
       },
       "daily": [
         {
@@ -612,8 +612,8 @@
         {
           "date": "2026-06-08",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1662.55,
-          "checks": 7
+          "avgLatencyMs": 1615.79,
+          "checks": 8
         }
       ],
       "incidents": [
