@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112755153-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-112755153-1");
+    </script>
+
+    <title>Resume · Aayush Gupta</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f1115" />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+
+    <style>
+      :root {
+        --text: #e6e6e6;
+        --muted: #9aa0a6;
+        --link: #8ab4f8;
+        --border: #2a2f3a;
+        --bg: #0f1115;
+        --bg-subtle: #12161c;
+      }
+      html { color-scheme: dark; }
+      html, body {
+        background: var(--bg) !important;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 1.5;
+        min-height: 100%;
+      }
+      body:before, #banner:before { display: none !important; background: none !important; }
+      #page-wrapper {
+        background: none !important;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      #header, #footer, .wrapper, header.alt {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      #header {
+        display: block !important;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 1.5rem;
+      }
+      #header h1 {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+      #header h1 a {
+        color: var(--text);
+        text-decoration: none;
+      }
+      #nav #menu {
+        background: var(--bg-subtle);
+        border: 1px solid var(--border);
+      }
+      .resume-page {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem 1rem 2rem;
+        box-sizing: border-box;
+      }
+      .resume-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+      }
+      .resume-toolbar h2 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      .resume-toolbar a {
+        color: var(--link);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--link);
+      }
+      .resume-toolbar a:hover {
+        border-bottom-style: solid;
+      }
+      .resume-viewer {
+        flex: 1;
+        min-height: 0;
+      }
+      .resume-viewer iframe {
+        display: block;
+        width: 100%;
+        height: calc(100vh - 220px);
+        min-height: 520px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: #fff;
+      }
+      #footer ul.icons {
+        gap: 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.95rem;
+      }
+      #footer .icons a { color: var(--muted); text-decoration: none; }
+      #footer .icons a:hover { color: var(--link); }
+      #footer {
+        border-top: 1px solid var(--border);
+        padding: 1rem 1rem 1.5rem;
+        text-align: center;
+        margin-top: auto;
+      }
+      @media (max-width: 736px) {
+        .resume-viewer iframe {
+          height: calc(100vh - 260px);
+          min-height: 420px;
+        }
+      }
+    </style>
+  </head>
+  <body class="landing">
+    <div id="page-wrapper">
+      <header id="header" class="alt">
+        <h1><a href="/">Aayush Gupta</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="https://blog.aayushg.com">Blog</a></li>
+                  <li><a href="/#aboutme">About</a></li>
+                  <li><a href="/#projects">Projects</a></li>
+                  <li><a href="/#experience">Talks</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="resume-page">
+        <div class="resume-toolbar">
+          <h2>Resume</h2>
+          <a href="/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+        </div>
+        <div class="resume-viewer">
+          <iframe
+            src="/resume.pdf"
+            title="Aayush Gupta resume"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </main>
+
+      <footer id="footer">
+        <ul class="icons">
+          <li><a href="https://www.linkedin.com/in/aayushgupta0/" target="_blank"><span class="icon fa-linkedin"></span> LinkedIn</a></li>
+          <li><a href="https://www.github.com/Divide-By-0" target="_blank"><span class="icon fa-github"></span> GitHub</a></li>
+          <li><a href="/resume"><span class="icon fa-pen-nib"></span> Resume</a></li>
+          <li><a href="mailto:aayushg@mit.edu" target="_blank"><span class="icon fa-envelope"></span> Email</a></li>
+          <li><a href="https://blog.aayushg.com" target="_blank"><span class="icon fa-file-text"></span> Blog</a></li>
+          <li><a href="https://www.twitter.com/yush_g" target="_blank"><span class="icon fa-twitter"></span> Twitter</a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Aayush Gupta</li>
+        </ul>
+      </footer>
+    </div>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/skel.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
