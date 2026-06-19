@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T10:55:48Z",
+  "generatedAt": "2026-06-19T12:21:12Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-06-19T10:55:48Z",
-      "latestLatencyMs": 193.02,
+      "checkedAt": "2026-06-19T12:21:12Z",
+      "latestLatencyMs": 170.95,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-06-19",
           "uptimePct": 100.0,
-          "avgLatencyMs": 170.79,
-          "checks": 8
+          "avgLatencyMs": 170.81,
+          "checks": 9
         }
       ],
       "incidents": [
@@ -220,13 +220,13 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-06-19T10:55:48Z",
-      "latestLatencyMs": 175.7,
+      "checkedAt": "2026-06-19T12:21:12Z",
+      "latestLatencyMs": 146.7,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
-        "30d": 99.8723
+        "30d": 99.8721
       },
       "daily": [
         {
@@ -406,8 +406,8 @@
         {
           "date": "2026-06-19",
           "uptimePct": 100.0,
-          "avgLatencyMs": 188.55,
-          "checks": 8
+          "avgLatencyMs": 183.9,
+          "checks": 9
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-06-19T10:55:48Z",
-      "latestLatencyMs": 1395.61,
+      "checkedAt": "2026-06-19T12:21:12Z",
+      "latestLatencyMs": 2160.67,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-06-19",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1793.78,
-          "checks": 8
+          "avgLatencyMs": 1834.54,
+          "checks": 9
         }
       ],
       "incidents": [
