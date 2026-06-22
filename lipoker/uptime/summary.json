@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T22:19:19Z",
+  "generatedAt": "2026-06-22T22:56:53Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-06-22T22:19:19Z",
-      "latestLatencyMs": 257.16,
+      "checkedAt": "2026-06-22T22:56:53Z",
+      "latestLatencyMs": 166.63,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-06-22",
           "uptimePct": 100.0,
-          "avgLatencyMs": 223.52,
-          "checks": 16
+          "avgLatencyMs": 220.17,
+          "checks": 17
         }
       ],
       "incidents": [
@@ -220,13 +220,13 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-06-22T22:19:19Z",
-      "latestLatencyMs": 146.4,
+      "checkedAt": "2026-06-22T22:56:53Z",
+      "latestLatencyMs": 156.82,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
-        "30d": 99.8703
+        "30d": 99.8701
       },
       "daily": [
         {
@@ -406,8 +406,8 @@
         {
           "date": "2026-06-22",
           "uptimePct": 100.0,
-          "avgLatencyMs": 188.05,
-          "checks": 16
+          "avgLatencyMs": 186.21,
+          "checks": 17
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-06-22T22:19:19Z",
-      "latestLatencyMs": 1559.1,
+      "checkedAt": "2026-06-22T22:56:53Z",
+      "latestLatencyMs": 1951.96,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-06-22",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1630.78,
-          "checks": 16
+          "avgLatencyMs": 1649.67,
+          "checks": 17
         }
       ],
       "incidents": [
