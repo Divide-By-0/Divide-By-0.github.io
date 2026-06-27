@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T04:37:46Z",
+  "generatedAt": "2026-06-27T05:59:57Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-06-27T04:37:46Z",
-      "latestLatencyMs": 126.31,
+      "checkedAt": "2026-06-27T05:59:57Z",
+      "latestLatencyMs": 159.19,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-06-27",
           "uptimePct": 100.0,
-          "avgLatencyMs": 205.07,
-          "checks": 4
+          "avgLatencyMs": 195.89,
+          "checks": 5
         }
       ],
       "incidents": [
@@ -220,13 +220,13 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-06-27T04:37:46Z",
-      "latestLatencyMs": 109.7,
+      "checkedAt": "2026-06-27T05:59:57Z",
+      "latestLatencyMs": 128.73,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
         "7d": 100.0,
-        "30d": 99.8693
+        "30d": 99.8695
       },
       "daily": [
         {
@@ -406,8 +406,8 @@
         {
           "date": "2026-06-27",
           "uptimePct": 100.0,
-          "avgLatencyMs": 202.73,
-          "checks": 4
+          "avgLatencyMs": 187.93,
+          "checks": 5
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-06-27T04:37:47Z",
-      "latestLatencyMs": 851.95,
+      "checkedAt": "2026-06-27T05:59:57Z",
+      "latestLatencyMs": 2414.46,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-06-27",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1821.91,
-          "checks": 4
+          "avgLatencyMs": 1940.42,
+          "checks": 5
         }
       ],
       "incidents": [
