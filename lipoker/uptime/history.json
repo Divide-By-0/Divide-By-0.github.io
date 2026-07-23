@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T06:57:46Z",
+  "generatedAt": "2026-07-23T07:54:09Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,12 +14,6 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "samples": [
-        {
-          "t": "2026-04-24T07:32:41Z",
-          "s": "up",
-          "ms": 162.65,
-          "r": "HTTP 200"
-        },
         {
           "t": "2026-04-24T08:20:34Z",
           "s": "up",
@@ -15781,6 +15775,12 @@
           "s": "up",
           "ms": 242.42,
           "r": "HTTP 200"
+        },
+        {
+          "t": "2026-07-23T07:54:09Z",
+          "s": "up",
+          "ms": 247.93,
+          "r": "HTTP 200"
         }
       ]
     },
@@ -15791,12 +15791,6 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "samples": [
-        {
-          "t": "2026-04-24T07:32:41Z",
-          "s": "up",
-          "ms": 176.38,
-          "r": "HTTP 200"
-        },
         {
           "t": "2026-04-24T08:20:34Z",
           "s": "up",
@@ -31558,6 +31552,12 @@
           "s": "up",
           "ms": 232.37,
           "r": "HTTP 200"
+        },
+        {
+          "t": "2026-07-23T07:54:09Z",
+          "s": "up",
+          "ms": 101.57,
+          "r": "HTTP 200"
         }
       ]
     },
@@ -31568,12 +31568,6 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "samples": [
-        {
-          "t": "2026-04-24T07:32:41Z",
-          "s": "up",
-          "ms": 2175.81,
-          "r": "SELECT 1"
-        },
         {
           "t": "2026-04-24T08:20:34Z",
           "s": "up",
@@ -47334,6 +47328,12 @@
           "t": "2026-07-23T06:57:46Z",
           "s": "up",
           "ms": 1370.44,
+          "r": "SELECT 1"
+        },
+        {
+          "t": "2026-07-23T07:54:09Z",
+          "s": "up",
+          "ms": 1492.88,
           "r": "SELECT 1"
         }
       ]
