@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T11:46:00Z",
+  "generatedAt": "2026-07-31T12:44:17Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-07-31T11:46:00Z",
-      "latestLatencyMs": 237.82,
+      "checkedAt": "2026-07-31T12:44:17Z",
+      "latestLatencyMs": 203.47,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-07-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 177.65,
-          "checks": 8
+          "avgLatencyMs": 180.52,
+          "checks": 9
         }
       ],
       "incidents": [
@@ -220,8 +220,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-07-31T11:46:01Z",
-      "latestLatencyMs": 300.66,
+      "checkedAt": "2026-07-31T12:44:17Z",
+      "latestLatencyMs": 4417.11,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -406,8 +406,8 @@
         {
           "date": "2026-07-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 180.01,
-          "checks": 8
+          "avgLatencyMs": 650.8,
+          "checks": 9
         }
       ],
       "incidents": [
@@ -426,8 +426,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-07-31T11:46:01Z",
-      "latestLatencyMs": 1670.23,
+      "checkedAt": "2026-07-31T12:44:22Z",
+      "latestLatencyMs": 1734.9,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -612,8 +612,8 @@
         {
           "date": "2026-07-31",
           "uptimePct": 100.0,
-          "avgLatencyMs": 1508.15,
-          "checks": 8
+          "avgLatencyMs": 1533.34,
+          "checks": 9
         }
       ],
       "incidents": [
