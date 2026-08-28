@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T14:08:02Z",
+  "generatedAt": "2026-08-28T23:55:41Z",
   "source": {
     "provider": "GitHub Actions",
     "repo": "Divide-By-0/Divide-By-0.github.io",
@@ -14,8 +14,8 @@
       "method": "HTTP GET",
       "target": "https://lipoker.io/",
       "status": "up",
-      "checkedAt": "2026-08-28T14:08:02Z",
-      "latestLatencyMs": 91.6,
+      "checkedAt": "2026-08-28T23:55:41Z",
+      "latestLatencyMs": 231.9,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -200,8 +200,8 @@
         {
           "date": "2026-08-28",
           "uptimePct": 100.0,
-          "avgLatencyMs": 122.44,
-          "checks": 2
+          "avgLatencyMs": 158.92,
+          "checks": 3
         }
       ],
       "incidents": []
@@ -213,8 +213,8 @@
       "method": "HTTP GET",
       "target": "https://api.lipoker.io/api/health",
       "status": "up",
-      "checkedAt": "2026-08-28T14:08:02Z",
-      "latestLatencyMs": 156.32,
+      "checkedAt": "2026-08-28T23:55:41Z",
+      "latestLatencyMs": 229.82,
       "latestReason": "HTTP 200",
       "uptimePct": {
         "24h": 100.0,
@@ -399,18 +399,11 @@
         {
           "date": "2026-08-28",
           "uptimePct": 100.0,
-          "avgLatencyMs": 169.89,
-          "checks": 2
+          "avgLatencyMs": 189.87,
+          "checks": 3
         }
       ],
-      "incidents": [
-        {
-          "startedAt": "2026-05-30T16:16:10Z",
-          "endedAt": "2026-05-30T16:40:30Z",
-          "durationMinutes": 5,
-          "reason": "HTTP 502"
-        }
-      ]
+      "incidents": []
     },
     {
       "key": "database",
@@ -419,8 +412,8 @@
       "method": "Direct SQL",
       "target": "Cloud SQL prod-db",
       "status": "up",
-      "checkedAt": "2026-08-28T14:08:02Z",
-      "latestLatencyMs": 2525.08,
+      "checkedAt": "2026-08-28T23:55:41Z",
+      "latestLatencyMs": 4185.6,
       "latestReason": "SELECT 1",
       "uptimePct": {
         "24h": 100.0,
@@ -605,8 +598,8 @@
         {
           "date": "2026-08-28",
           "uptimePct": 100.0,
-          "avgLatencyMs": 2105.49,
-          "checks": 2
+          "avgLatencyMs": 2798.86,
+          "checks": 3
         }
       ],
       "incidents": []
