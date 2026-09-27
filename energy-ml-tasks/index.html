@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Energy-ML Harbor Tasks</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root { --bg: #F2F4F0; --surface: #FFFFFF; --ink: #15201B; --muted: #56655D; --line: #D5DCD3; --accent: #1D6B57; --on-accent: #FFFFFF; --bad: #A8322A; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0D1311; --surface: #141C19; --ink: #E1E8E3; --muted: #93A39A; --line: #25312C; --accent: #5CBF9D; --on-accent: #06120D; --bad: #EE7B70; color-scheme: dark; } }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; display: grid; place-items: center; padding: 16px; }
+form { width: 100%; max-width: 380px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; }
+h1 { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-stretch: 82%; font-weight: 760; font-size: 26px; line-height: 1.1; margin: 0; }
+p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+input { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
+button { font: inherit; font-weight: 500; padding: 10px 12px; border: 0; border-radius: 6px; background: var(--accent); color: var(--on-accent); cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: progress; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#err { color: var(--bad); font-size: 13px; min-height: 1.2em; }
+</style>
+</head>
+<body>
+<form id="f">
+  <h1>Energy-ML Harbor Tasks</h1>
+  <p>Verifiable ML-engineering tasks with graders, gold solutions and model trial results. Enter the password to open.</p>
+  <label for="pw">Password</label>
+  <input id="pw" type="password" autocomplete="current-password" required autofocus>
+  <button id="go" type="submit">Unlock</button>
+  <div id="err" role="alert"></div>
+</form>
+<script>
+// The page is published encrypted (AES-256-GCM, key = PBKDF2-SHA256(password)); see site/encrypt_page.py.
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function unlock(pw) {
+  const blob = await (await fetch("payload.json", { cache: "no-store" })).json();
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  const key = await crypto.subtle.deriveKey({ name: "PBKDF2", hash: "SHA-256", salt: b64(blob.salt), iterations: blob.iter },
+    base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  const gz = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(blob.iv) }, key, b64(blob.ct));
+  const html = await new Response(new Blob([gz]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+  try { sessionStorage.setItem("emlt-pw", pw); } catch (e) {}
+  document.open(); document.write(html); document.close();
+}
+const form = document.getElementById("f"), err = document.getElementById("err"), go = document.getElementById("go");
+form.addEventListener("submit", async e => {
+  e.preventDefault(); err.textContent = ""; go.disabled = true; go.textContent = "Unlocking…";
+  try { await unlock(document.getElementById("pw").value); }
+  catch (x) { err.textContent = "That password didn't work. Check it and try again."; go.disabled = false; go.textContent = "Unlock"; }
+});
+let saved = null; try { saved = sessionStorage.getItem("emlt-pw"); } catch (e) {}
+if (saved) unlock(saved).catch(() => { try { sessionStorage.removeItem("emlt-pw"); } catch (e) {} });
+</script>
+</body>
+</html>
