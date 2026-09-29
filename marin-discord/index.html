@@ -194,7 +194,7 @@ function buildTree() {
       <div class="catbody" ${open[cat] === false ? "hidden" : ""}>
       ${list.map(c => {
         const th = (threadsOf[c.id] || []).sort((a, b) => (b.last || 0) - (a.last || 0));
-        return `<button class="chan" data-id="${c.id}"><span class="hash">#</span><span class="nm">${esc(c.name)}</span><span class="ct">${c.n}</span></button>` +
+        return `<button class="chan" data-id="${c.id}"><span class="hash">${c.forum ? "▤" : "#"}</span><span class="nm">${esc(c.name)}</span><span class="ct">${c.forum ? (threadsOf[c.id] || []).length + " posts" : c.n}</span></button>` +
           (th.length ? `<div class="threads" data-parent="${c.id}">${th.map((t, i) => `<button class="chan" data-id="${t.id}" ${i >= 5 ? "hidden" : ""}><span class="hash">↳</span><span class="nm">${esc(t.name)}</span><span class="ct">${t.n}</span></button>`).join("")}${th.length > 5 ? `<button class="tmore" data-more="${c.id}">Show all ${th.length} threads</button>` : ""}</div>` : "");
       }).join("")}
       </div></div>`).join("");
@@ -250,7 +250,7 @@ function openChannel(cid, focus) {
 
 function draw(rows, start, focus) {
   const sc = $("#scroll");
-  if (!rows.length) { sc.innerHTML = `<div class="empty">No messages visible in this channel.</div>`; return; }
+  if (!rows.length) { sc.innerHTML = `<div class="empty">${CH[current] && CH[current].forum ? "This is a forum channel: its posts are the threads listed under it in the sidebar." : "No messages visible in this channel."}</div>`; return; }
   let html = start > 0 ? `<button class="more" id="older">Load ${Math.min(PAGE, start)} earlier messages</button>` : "";
   let lastDay = "";
   for (let i = start; i < rows.length; i++) {
