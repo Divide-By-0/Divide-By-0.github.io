@@ -143,6 +143,22 @@ button { font: inherit; color: inherit; }
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+// REASON alt: extra passwords (user 2026-09-29: "make the password 'qasim' work"). payload.alt holds the page key
+// wrapped (AES-GCM) under PBKDF2(alt password, same salt/iter), so an alt password unwraps the SAME key and the one
+// ciphertext serves every password. Removing this makes the alt password fail with "wrong password".
+async function decryptAny(blob, key) {
+  try { return await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(blob.iv) }, key, b64(blob.ct)); }
+  catch (e) {
+    for (const a of blob.alt || []) {
+      try {
+        const raw = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(a.iv) }, key, b64(a.w));
+        const k = await crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]);
+        return await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(blob.iv) }, k, b64(blob.ct));
+      } catch (_) {}
+    }
+    throw e;
+  }
+}
 let D, CH = {}, AUTH = {}, MSGIDX = {}, current = null;
 const PAGE = 400;
 
@@ -150,7 +166,7 @@ async function decrypt(pw) {
   const blob = await (await fetch("payload.json", { cache: "no-store" })).json();
   const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
   const key = await crypto.subtle.deriveKey({ name: "PBKDF2", hash: "SHA-256", salt: b64(blob.salt), iterations: blob.iter }, base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
-  const gz = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(blob.iv) }, key, b64(blob.ct));
+  const gz = await decryptAny(blob, key);
   return JSON.parse(await new Response(new Blob([gz]).stream().pipeThrough(new DecompressionStream("gzip"))).text());
 }
 
