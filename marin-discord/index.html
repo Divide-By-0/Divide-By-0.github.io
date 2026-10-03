@@ -143,7 +143,7 @@ button { font: inherit; color: inherit; }
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
-// REASON alt: extra passwords (user 2026-09-29: "make the password 'qasim' work"). payload.alt holds the page key
+// REASON alt: extra passwords (user 2026-09-29; never name an alt password here: this file ships as public page source). payload.alt holds the page key
 // wrapped (AES-GCM) under PBKDF2(alt password, same salt/iter), so an alt password unwraps the SAME key and the one
 // ciphertext serves every password. Removing this makes the alt password fail with "wrong password".
 async function decryptAny(blob, key) {

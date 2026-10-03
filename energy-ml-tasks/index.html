@@ -35,7 +35,7 @@ button:disabled { opacity: 0.6; cursor: progress; }
 <script>
 // The page is published encrypted (AES-256-GCM, key = PBKDF2-SHA256(password)); see site/encrypt_page.py.
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
-// REASON alt: extra passwords (user 2026-09-29: "make the password 'qasim' work"). payload.alt holds the page key
+// REASON alt: extra passwords (user 2026-09-29; never name an alt password here: this file ships as public page source). payload.alt holds the page key
 // wrapped (AES-GCM) under PBKDF2(alt password, same salt/iter), so an alt password unwraps the SAME key and the one
 // ciphertext serves every password. Removing this makes the alt password fail with "wrong password".
 async function decryptAny(blob, key) {
@@ -59,6 +59,10 @@ async function unlock(pw) {
   const gz = await decryptAny(blob, key);
   const html = await new Response(new Blob([gz]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
   try { sessionStorage.setItem("emlt-pw", pw); } catch (e) {}
+  // REASON: a remembered password auto-unlocks while this gate may still be loading; document.open() before the
+  // load event made Chrome abort the decrypted page's parser-blocking cross-site scripts (net::ERR_ABORTED, seen
+  // 2026-10-03 on the extrapolate_hud board loader, which shares this design). Wait for load first.
+  if (document.readyState !== "complete") await new Promise(r => window.addEventListener("load", r, { once: true }));
   document.open(); document.write(html); document.close();
 }
 const form = document.getElementById("f"), err = document.getElementById("err"), go = document.getElementById("go");
