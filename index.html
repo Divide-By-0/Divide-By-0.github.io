@@ -246,7 +246,6 @@
                   <li><a href="https://blog.aayushg.com">Blog</a></li>
                   <li><a href="#aboutme">About</a></li>
                   <li><a href="#projects">Projects</a></li>
-                  <li><a href="#experience">Talks</a></li>
                 </ul>
               </div>
             </li>
@@ -517,21 +516,6 @@
             </ul>
           </section>
 
-          <section id="experience">
-            <h2>Videos</h2>
-            <div class="carousel" id="video-carousel">
-              <iframe id="video-frame" src="https://www.youtube.com/embed/3jCKdxQ9Pfw?mute=1&rel=0" title="Video"></iframe>
-              <div class="carousel-controls">
-                <button id="prev-video" aria-label="Previous video">◀</button>
-                <div class="title" id="video-title">ZK Email to Vitalik (Zuconnect ’23)</div>
-                <div class="count" id="video-count">1 / 9</div>
-                <button id="next-video" aria-label="Next video">▶</button>
-              </div>
-            </div>
-            <div class="muted" style="margin-top: 0.5rem;">
-              Talks include ZK Email at Zuconnect, ZK Data Guilds, Morpheus, ZK Social, PLUME at Stanford SBC/EthBogotá/ZKSummit, and ZK Podcast #302.
-            </div>
-          </section>
         </main>
 
         <aside class="sidebar">
@@ -580,40 +564,8 @@
     <!-- Twitter widgets -->
     <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
-    <!-- Videos carousel + Thoughts headers (with CORS-friendly fallback) -->
+    <!-- Thoughts headers (with CORS-friendly fallback) -->
     <script>
-      // --- Video carousel ---
-      const videos = [
-        { id: "3jCKdxQ9Pfw", title: "ZK Email to Vitalik (Zuconnect ’23)" },
-        { id: "v6CQXDSgQxk", title: "ZK Data Guilds at Zuzalu ’23" },
-        { id: "OF0S5IVN-UE", title: "Morpheus at Zuconnect AI Day ’23" },
-        { id: "uvLpam9ui18", title: "Hot takes on ZK Social (Istanbul ’23)" },
-        { id: "2bWKxjtQMho", title: "PLUME at Stanford SBC ’22" },
-        { id: "dZKFG2i1gec", title: "PLUME at EthBogotá ’22" },
-        { id: "6ajBnMdJGoY", title: "PLUME at ZKSummit 8 ’22" },
-        { id: "vFYUWRks7Kg", title: "Email wallet on ZK Podcast #302" },
-        { id: "CNLh640fOWM", title: "ZK Airdrops at Devconnect ’22" }
-      ];
-      let vidIdx = 0;
-      const frame = document.getElementById('video-frame');
-      const titleEl = document.getElementById('video-title');
-      const countEl = document.getElementById('video-count');
-      function setVideo(i) {
-        vidIdx = (i + videos.length) % videos.length;
-        const v = videos[vidIdx];
-        frame.src = "https://www.youtube.com/embed/" + v.id + "?mute=1&rel=0";
-        titleEl.textContent = v.title;
-        countEl.textContent = (vidIdx + 1) + " / " + videos.length;
-      }
-      document.getElementById('prev-video').addEventListener('click', () => setVideo(vidIdx - 1));
-      document.getElementById('next-video').addEventListener('click', () => setVideo(vidIdx + 1));
-      // Auto-advance to the right
-      let autoTimer = setInterval(() => setVideo(vidIdx + 1), 7000);
-      const carouselEl = document.getElementById('video-carousel');
-      carouselEl.addEventListener('mouseenter', () => { clearInterval(autoTimer); });
-      carouselEl.addEventListener('mouseleave', () => { autoTimer = setInterval(() => setVideo(vidIdx + 1), 7000); });
-      setVideo(vidIdx);
-
       // --- Thoughts headers (CORS-friendly; h3 only; Markdown fallback + deep links) ---
       (async function loadThoughtHeaders() {
         const list = document.getElementById('thoughts-list');
